@@ -25,8 +25,8 @@ const VoiceFlightSearch = () => {
       const response = await axios.post('https://test.api.amadeus.com/v1/security/oauth2/token', null, {
         params: {
           grant_type: 'client_credentials',
-          client_id: 'gWTLpdwDAKellncriRIg9EcI7LS1EoKg',  // Replace with your Amadeus Client ID
-          client_secret: 'w1Jg8h8jq5TcLjd5',  // Replace with your Amadeus Client Secret
+          client_id: process.env.CLIENT_ID,  // Replace with your Amadeus Client ID
+          client_secret: process.env.CLIENT_SECRET,  // Replace with your Amadeus Client Secret
         },
       });
       return response.data.access_token;
